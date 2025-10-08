@@ -1,0 +1,129 @@
+/* Body y fuente */
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: rgb(131, 112, 99);
+    margin: 0;
+    padding: 0;
+}
+
+/* Header centrado */
+header {
+    text-align: center;
+    padding: 20px 0;
+    color: #311d09;
+    font-weight: bold;
+}
+
+/* Contenedor principal de columnas */
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 50px; /* espacio entre columnas */
+    padding: 20px;
+    flex-wrap: wrap; /* para pantallas pequeñas se apilen */
+}
+
+/* form */
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgb(126, 103, 86);
+    padding: 50px;
+    border-radius: 50px;
+    gap: 10px;
+    width: fit-content;
+}
+
+/* Inputs y textarea */
+input, textarea {
+    background-color: rgb(228, 213, 205);
+    width: 300px;
+    border: 3px solid rgb(43, 41, 40);
+    border-radius: 5px;
+    padding: 5px;
+    font-size: 14px;
+    margin-bottom: 10px;
+    display: block;
+}
+
+button {
+    background-color: #C3A995;
+    color: #452D15;
+    font-weight: bolder;
+    padding: 12px;
+    border: 3px solid #6F5E53;
+    border-radius: 15px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #8A7968;
+    color: white;
+    border: 3px solid white;
+}
+
+#notesContainer h2 {
+    margin: 0 0 10px 0;
+    color: #452D15;
+    font-size: 18px;
+    text-align: center;
+}
+
+/* Contenedor de notas visible incluso sin notas */
+#notesContainer {
+    padding: 20px;
+    border-radius: 20px;
+    width: fit-content;          /* se adapta al contenido */
+    max-width: 400px;            /* ancho máximo */
+    min-height: 150px;           /* altura mínima para que se vea */
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    overflow-y: auto;            /* scroll si hay muchas notas */
+}
+
+/* Título dentro del contenedor */
+#notesContainer h2 {
+    margin: 0 0 10px 0;
+    color: #452D15;
+    font-size: 18px;
+    text-align: center;
+}
+
+/* Cada nota */
+.note {
+    background-color: rgb(206, 168, 141);;
+    color: #452D15;
+    padding: 10px;
+    border-radius: 10px;
+    width: fit-content; 
+    position: relative;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+/* Botón eliminar */
+.note .delete-btn {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    background-color: rgb(110, 53, 12);
+    border: none;
+    color: white;
+    border-radius: 8px;
+    padding: 4px 8px;
+    cursor: pointer;
+}
+
+.note .delete-btn:hover {
+    background-color: rgb(153, 73, 16);
+}
+
+/* Responsivo: apilar columnas en pantallas pequeñas */
+@media (max-width: 640px) {
+    .container {
+        flex-direction: column;
+        align-items: center;
+    }
+}
